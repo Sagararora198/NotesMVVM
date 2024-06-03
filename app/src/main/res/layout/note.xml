@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="note"
+            type="com.example.notesmvvm.model.Note" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/noteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{note.title}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:paddingBottom="4dp" />
+
+            <TextView
+                android:id="@+id/noteBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{note.body}"
+                android:maxLines="2"
+                android:maxLength="100"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.notesmvvm.viewModel.NoteViewModel" />
+        <variable
+            name="note"
+            type="com.example.notesmvvm.model.Note" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/editNoteTitleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{note.title}"
+
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editNoteBodyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:text="@{note.body}"
+
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:gravity="top"
+            android:scrollbars="vertical" />
+
+        <Button
+            android:id="@+id/saveEditedNoteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+    </LinearLayout>
+</layout>
